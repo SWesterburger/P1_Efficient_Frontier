@@ -3,7 +3,7 @@ Group Project 1 Efficient Frontier (Mindy, Juan, Steffen)
 
 Initial list of steps in this project:
 
-Aplaca/Quandl API
+Alpaca/Quandl API
 
 How to get data in automatic way (input boxes for ticker)
 
