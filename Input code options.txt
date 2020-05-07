@@ -1,0 +1,75 @@
+# Program to check input  
+# type in Python 
+  
+num = input ("Enter number :") 
+print(num) 
+name1 = input("Enter name : ") 
+print(name1) 
+  
+# Printing type of input value 
+print ("type of number", type(num)) 
+print ("type of name", type(name1)) 
+
+
+
+
+https://datatofish.com/entry-box-tkinter/
+
+
+
+# Makes a function that will contain the
+# desired program.
+def example():
+
+    # Calls for an infinite loop that keeps executing
+    # until an exception occurs
+    while True:
+        test4word = input("What's your name? ")
+
+        try:
+            test4num = int(input("From 1 to 7, how many hours do you play in your mobile?" ))
+
+        # If something else that is not the string
+        # version of a number is introduced, the
+        # ValueError exception will be called.
+        except ValueError:
+            # The cycle will go on until validation
+            print("Error! This is not a number. Try again.")
+
+        # When successfully converted to an integer,
+        # the loop will end.
+        else:
+            print("Impressive, ", test4word, "! You spent", test4num*60, "minutes or", test4num*60*60, "seconds in your mobile!")
+            break
+
+# The function is called
+example()
+
+# Output 
+What's your name? Francis
+From 1 to 7, how many hours do you play in your mobile? 3
+Impressive, Francis! You spent 180 minutes or 10800 seconds on your mobile!
+
+
+
+
+
+
+
+
+
+https://stackoverflow.com/questions/20865010/how-do-i-create-an-input-box-with-python
+
+
+
+
+
+
+
+https://docs.python.org/2/library/tkinter.html
+
+
+
+
+
+
