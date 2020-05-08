@@ -3,8 +3,6 @@ Group Project 1 Efficient Frontier (Mindy, Juan, Steffen)
 
 Initial list of steps in this project:
 
-Alpaca/Quandl API
-
 How to get data in automatic way (input boxes for ticker)
 
 SD, Returns.... (from homework)
@@ -33,4 +31,14 @@ Put some checks on the data to make sure it is fully clean
 
 Dashboard pyviz funzies
 
+Datetime Issue (subtracting two dates) 
 
+Get ticker's in better way 
+
+Hoverover points 
+
+Efficient fronteir in pyviz? 
+
+clean up dataframes 
+
+Ability to change data in graph (such as time period etc with drop downs)
