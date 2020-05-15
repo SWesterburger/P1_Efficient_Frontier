@@ -91,7 +91,7 @@ Using the Sharpe ratio this is the optimum weights combination we found for our 
 
 The above mentioned ratios can be used in our optimization efforts when we use the results to create the efficient frontier. The efficient frontier is an analysis and representation of optimal internal portfolio weights that would offer the highest expected return for any defined level of risk (Investopedia) These outcomes are dependent on combinations of weights that make up the portfolio. When we use the Sharpe ratio this is the frontier we found:
 
-![EF_sharpe](png/EF_Sharp.png)
+![EF_sharpe](png/EF_Sharp.PNG)
 
 The red line specifies the maximum Sharpe ratio that can be achieved for a specific level of volatility. The red dot is the optimal Sharpe ratio. In this case it was 3.74 when the volatility of the portfolio is  15.48% and the return 57.9%.
 
@@ -102,7 +102,7 @@ The Sortino Ratio is a different version of the Sharpe Ratio. Instead of calcula
 We recalculated the standard volatility of the portfolio by filtering out positive returns, and then ran our optimization routine. In this particular case the optimum is achieved when 100% of funds are allocated to AAPL. It looks like in 2019 Apple was indeed an amazing investment! The dotted blue line in the graph below represents the Sortino based efficient frontier:
 
 
-![EF_Sortino](png/EF_Sharp_Sortino.png)
+![EF_Sortino](png/EF_Sharp_Sortino.PNG)
 
 The blue dot is the optimum Sortino ratio that coincides with the volatility and return of AAPL for this period: vol of 26.2% and return of 86.5%.
 
@@ -127,7 +127,7 @@ Using this metric the prefer stock is PG, followed by AAPL and FB. We noticed ho
 The efficient frontier is the dotted green line in the graph below. We can compare it to the Sharpe ratio (red) and Sortino ratio (blue):
 
 
-![EF_SharpeG](png/EF_Sharp_sortino_SG.png)
+![EF_SharpeG](png/EF_Sharp_sortino_SG.PNG)
 
 ### **Allowing for short-selling**
 To make the portfolio more realistic, we allow for individual short selling on only 10% of the total value of the portfolio. We do this in our algorithm by redefining the bounds of the parameters to [-0.10, 1.0]. As expected, we found negative allocation on stocks that were not selected running the ordinary Sharpe ratio based optimization.
@@ -137,7 +137,7 @@ To make the portfolio more realistic, we allow for individual short selling on o
 
 The efficient frontier for the new portfolio is depicted by the continuos green line below. By allowing the optimizer to select negative weights for the underperforming stocks the expected return can be increased by a considerable amount. 
 
-![EF_SS](png/EF_Sharp_SS.png)
+![EF_SS](png/EF_Sharp_SS.PNG)
 
 ## **Optimization Routine**
 The three ratios we are analyzing are proportional to the expected rate of return and inverse to the volatility of the portfolio. Our goal therefore is to maximize the ratio. To this aim we employ the SciPy python library (https://www.scipy.org/). This is a very powerful scientific computing library that includes modules not only for optimization but also for linear algebra, integration, interpolation, special functions, FFT, signal and image processing, ODE solvers and other tasks common in science and engineering (Wikipedia). From the *optimize* module (https://docs.scipy.org/doc/scipy/reference/tutorial/optimize.html) we selected the Sequential Least SQuares Programming Algorithm (SLSQP). This is the right algorithm for our problem as the objective function (the ratio) is multivariate scalar and the optimization requires one or multiple constraints (portfolio weights and volatility points for the efficient frontier). The routine finds the minimum of the objective so we specified the function as the negative of the ratio. Once the optimum is found we just have to change the sign to obtain the maximum.   
