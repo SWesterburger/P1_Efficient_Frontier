@@ -34,7 +34,7 @@ In order to ensure reliability and validity of our analyses, it is important to 
 
 The information we are interested in is primarily the close price of every tradeable stock per trade day. This raw data gives us the perfect start for our analysis. Another benefit of using the Alpaca API is that the process of data cleaning is straightforward. By simply dropping the columns in our dataframe that we will not be using, a 'clean' and handy dataframe for us to work with is what remains. 
 
-![returns](return_stocks.png)
+![returns](png/return_stocks.png)
 ### *Challenges we ran into during the data exploration and clean up process*
 
 Irrespective of the straightforward process of data cleaning, we did face some important data-related questions we needed to answer. Optimization and portfolio analysis heavily relies on accuracy of the underlying data used for these analyses. In other words, it is very important to realize the limitations and characteristics of the pulled in stock data, and more importantly of the covered time span. If, for example, the data only covers a time span in which the overall stock market was overperforming, the outcome of the analysis will be skewed/show overly optimistic outcomes as well. The same is true if the dataset primarly covers a period of economic downturn. It is important to realize the existence of these potential limitations this when interpreting result of our analyses. 
@@ -55,29 +55,29 @@ The Sharpe Ratio uses annualized cumulative stock returns and the standard devia
 
 ?? DO WE WANT TO DISCUSS FUNDAMENTAL CODING DECISIONS HERE - FOR EXAMPLE WHY NEG SHARPE?
 
-![scatter_sharpe](scatter_sharp.png)
-![pie_sharpe](Pie_Sharpe.png)
-![EF_sharpe](EF_Sharp.png)
+![scatter_sharpe](png/scatter_sharp.png)
+![pie_sharpe](png/Pie_Sharpe.png)
+![EF_sharpe](png/EF_Sharp.png)
 --> ADD DISCUSSION OF GRAPH, LIMITATIONS ETC
 
 
 ### **The Sortino Ratio**
 
 The Sortino Ratio is a different version of the Sharpe Ratio. Instead of calculating the standard deviation of a stock or portfolio, the Sortino ratio solely focuses on the asset's standard deviation of the negative returns. In other words it is only looking at downside deviation, instead of the total standard deviation (Investopedia) This is a very welcome adjustment of the 'regular' Sharpe-ratio, because investors would generally welcome any upside volatility. The Sortino ratio alleviates punishment for good (upward) risk which is neglected in the Sharpe-ratio.
-![EF_Sortino](EF_Sharp_Sortino.png)
+![EF_Sortino](png/EF_Sharp_Sortino.png)
 ### **The Generalized Sharp Ratio**
 The Sharpe ratio uses only the expected return and volatility of the returns of assets. Investors can also be interested in picking a portfolio with positive skew, that is, a portfolio with a long right hand tail in the distribution. 
 
-![skew](Negative_and_positive_skew_diagrams_(English).svg.png)
+![skew](png/Negative_and_positive_skew_diagrams_(English).svg.png)
 
 
 
 We modify the Sharp ratio by proportionally scaling it with the the skew of returns. A positive skew can be a desired feature as the average return across all the stocks would be greater than the median return. 
 
-![skew_stocks](Positive_skew.png.jpg)
+![skew_stocks](png/Positive_skew.png.jpg)
 
-![Pie_SharpeG](Pie_SharpeG.png)
-![EF_SharpeG](EF_Sharp_sortino_SG.png)
+![Pie_SharpeG](png/Pie_SharpeG.png)
+![EF_SharpeG](png/EF_Sharp_sortino_SG.png)
 
 
 --> ADD DISCUSSION OF GRAPH, LIMITATIONS ETC
@@ -95,14 +95,14 @@ We minimize the negative of the ratio subject to the condition that the sum of w
 
 --> ADD DISCUSSION OF GRAPH, LIMITATIONS ETC
 ### **Allowing for short-selling**
-![EF_SS](EF_Sharp_SS.png)
-![weights_ss](Weights_short_selling.png)
+![EF_SS](png/EF_Sharp_SS.png)
+![weights_ss](png/Weights_short_selling.png)
 ### **Monte Carlo Simulation**
 
 The Monte Carlo simulation is a multiple probability simulation that is often used for financial analysis. It used to model probability of different outcomes that would otherwise be difficult to predict because of the interference of uncertain variables such as return rates (Investopedia). This uncertainty is adressed by using a simulation of multiple different potential values for any variable (based on historic information) rather than just using a single value. 
 
-![MC](MC.png)
-![MC_histogram](MC_histogram.png)
+![MC](png/MC.png)
+![MC_histogram](png/MC_histogram.png)
 --> ADD PNG OF GRAPH
 
 --> ADD DISCUSSION OF GRAPH, LIMITATIONS ETC
