@@ -51,7 +51,7 @@ In our interface the investor has the option to select directly the candidate st
 
 We have selected historical data (close prices) covering the year 2019.
 
-![statistics](png/describe_data.png)
+![statistics](png/describe_data.PNG)
 
 
 This is the plotting of returns for the 10 stocks:
